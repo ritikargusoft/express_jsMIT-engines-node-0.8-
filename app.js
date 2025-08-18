@@ -3,20 +3,19 @@ import path from "path"
 const app = express();
 
 const staticPath = path.join(import.meta.dirname,"public");
-app.use(express.static(staticPath))
+app.use("/public", express.static(staticPath))
 
-// app.use(express.static("public"))
- 
-app.get("/", (req,res)=>{
-// console.log(import.meta.dirname);
-// res.send("HI");
-// const __filename = new URL(import.meta.url).pathname;
-// console.log(__filename)
+app.get("/profile/:username", (req,res)=>{
+    console.log(req.params);
+    res.send(`<h1> My name is ${req.params.username}</h1>`)
+})
+
+app.get("/profile/:username/article/:slug", (req,res)=>{
+    console.log(req.params);
+    res.send(`<h1> Article ${req.params.username} by ${req.params.slug}</h1>`)
+})
 
 
-const homePagePath = path.join(import.meta.dirname,"public","index.html")
-res.sendFile(homePagePath)
-});
 
 
 const PORT = process.env.PORT || 3000;
