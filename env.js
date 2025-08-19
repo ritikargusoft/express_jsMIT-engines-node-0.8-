@@ -15,5 +15,7 @@ import {z, ZodError} from "zod";
 //     }
 // }
 
-const portSchema = z.coerce.number.min(1).max(6553).default(3000);
-const PORT = portSchema.parse(process.env.PORT)
+// const portSchema = z.coerce.number.min(1).max(6553).default(3000);
+// const PORT = portSchema.parse(process.env.PORT)
+
+export const PORT = process.env.PORT
