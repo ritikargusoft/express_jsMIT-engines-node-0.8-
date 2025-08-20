@@ -1,0 +1,8 @@
+1file -> 2nd file
+Streams are abstract interfaces for working with streaming data in Node.js, allowing data to be processed in small chunks rather than loading the entire dataset into memory at once.
+This "chunk-by-chunk" processing makes streams highly efficient for handling large files, network communication, or real-time data feeds.
+There are four main types of streams:
+Readable Streams: For reading data (e.g., fs.createReadStream()).
+Writable Streams: For writing data (e.g., fs.createWriteStream()).
+Duplex Streams: Streams that are both readable and writable (e.g., net.Socket).
+Transform Streams: Duplex streams that can modify or transform data as it flows through them (e.g., zlib.createDeflate)
